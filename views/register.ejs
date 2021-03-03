@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include partials/head %>
+</head>
+
+<body>
+    <p class="text-dark col-md-2" ><a href="/readme.html">link to my readme file</a></p>
+
+<div class="container-fluid">
+    <div class="text-center"><h1>Exercise 4</h1></div>
+    <div class="col-md-2 border bg-light mx-auto pr-5">
+
+      <div class="text-info pt-2 text-center"><h2><%= title %></h2></div>
+
+      <form action="/register" method="post">
+        <div class="field">
+          <label>Email</label>
+          <div class="control">
+            <input class="input" type="email" name="email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label>First Name</label>
+          <div class="control">
+            <input class="input" type="text" name="firstName" pattern="[A-Za-z]+" required>
+          </div>
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <div class="control">
+            <input class="input" type="text" name="lastName" pattern="[A-Za-z]+" required>
+          </div>
+        </div><br>
+        <div class="field">
+          <div class="control">
+            <button class="btn btn-success" type="submit">Continue registration</button>
+          </div>
+        </div>
+      </form>
+          <br>
+          <div><a href="/login">Go to Login page</a></div><br>
+
+    </div>
+</div>
+
+</body>
+<% include partials/script %>
+</html>

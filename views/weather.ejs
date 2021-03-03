@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <script src="javascripts/script.js" defer></script>
+</head>
+
+<body>
+
+<div class = "container-fluid">
+    <h3 class="center">Usrename: <%= firstName %></h3>
+
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
+
+    <img src="../images/clouds-header.png" alt="cannot display image" class="w-100" />
+    <br>
+    <div id="form-row">
+        <form id="fieldinputs">
+            <div class="form-row pt-2" >
+                <div class="form-group col-md-4 col-xs-12">
+
+                    <div class = "container-fluid border bg-light" id="inputfields">
+                        <h2 class="text-left">Add Location</h2>
+                        <label for="inputCityName" id="inpLbl">City Name:</label>
+                        <input type="text" class="form-control" id="inputCityName" name="cityName">
+                        <div class ="container-fluid row text-danger" id="inputCityError"></div>
+
+                        <label for="inputLongitude">Longitude:</label>
+                        <input type="text" class="form-control" id="inputLongitude" name="latitude">
+                        <div class ="container-fluid row text-danger" id="inputLongitudeError"></div>
+
+                        <label for="inputLatitude">Latitude:</label>
+                        <input type="text" class="form-control" id="inputLatitude" name="longitude">
+                        <div class ="container-fluid row text-danger" id="inputLatitudeError"></div><br>
+
+                        <button class="btn btn-success" type="button" id="addLocationButton">Add Location</button><br><br>
+
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-xs-12">
+                    <div class = "container-fluid img-fluid border bg-light">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class = "text-left">Location weather</h1>
+                            </div>
+                            <div class="container-fluid col-md-6">
+                                <div class="text-success col" id="afterDropdown"></div>
+                            </div>
+                        </div>
+                        <form>
+
+                            <label for="dropDownSelect"></label>
+                            <select class="btn bg-info outline-dark" name="dropDownSelect" id="dropDownSelect" >
+                                <option value="choose">Choose a City/Province:</option>
+                            </select>
+
+                            <br><div class="container-fluid img-fluid row" id="content"></div><br>
+
+                            <button class="btn btn-success" type="button" id="Displayweather">Display Weather</button>
+                            <input type="button" class="btn btn-success" id="deleteButton" name="Delete" value="Delete">
+                            <button class="btn btn-success" type="button" id="Reset">Reset</button>
+
+                            <br>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container-fluid row mt-2" id="data"></div> <!-- output data --->
+
+</div><br>
+</body>
+<% include partials/script %>
+</html>
